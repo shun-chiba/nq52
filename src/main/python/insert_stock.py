@@ -15,13 +15,13 @@ def insert_stock(company, host, port, dbname, user, password, data):
 	
 	cur = connection.cursor()
 
-	cur.execute("delete from stock.dev_stock where campany = "+str(company)+")")
+	cur.execute("delete from nq52.dev_stock where campany_cd = "+str(company))
 
 	data_array = data.values
 
 	for row in data_array:
 		d = datetime.datetime.strptime(row[0], '%Y年%m月%d日')
-		cur.execute("insert into stock.dev_stock values("+company+", "+d.strftime('%Y%m%d')+", "+str(row[1])+", "+str(row[2])+", "+str(row[3])+", "+str(row[6])+", "+str(row[5])+", "+str((row[2]+row[3])//2)+")")
+		cur.execute("insert into nq52.dev_stock values("+str(company)+", '"+d.strftime('%Y%m%d')+"', "+str(row[1])+", "+str(row[2])+", "+str(row[3])+", "+str(row[6])+", "+str(row[5])+", "+str((row[2]+row[3])//2)+")")
 
 	connection.commit()
 	

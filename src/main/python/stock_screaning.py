@@ -1,3 +1,4 @@
+# coding:utf-8
 import datetime
 import scraping_yahoo
 import insert_stock
@@ -8,11 +9,11 @@ company = 7261
 days = 30
 
 #DB接続情報
-host = "localhost"
+host = "172.17.0.2"
 port = 5432
 dbname = "postgres"
 user = "postgres"
-password = "stock"
+password = "postgres"
 
 ######################################################
 #株価の初回取得
@@ -21,6 +22,8 @@ password = "stock"
 
 if __name__ == "__main__":
 
+
+	print("test")
 	EndDate = datetime.date.today()
 	StartDate = EndDate - datetime.timedelta(days)
 
