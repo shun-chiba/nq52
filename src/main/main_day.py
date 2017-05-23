@@ -6,7 +6,7 @@ import insert_stock
 #銘柄番号
 company = 7261
 #取得日数
-days = 1
+days = 0
 
 #DB接続情報
 host = "172.17.0.2"

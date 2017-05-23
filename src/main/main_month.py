@@ -24,7 +24,7 @@ password = "postgres"
 if __name__ == "__main__":
 
 
-	print("test")
+	print(datetime.date.today())
 	EndDate = datetime.date.today()
 	StartDate = EndDate - datetime.timedelta(days)
 	print(EndDate)
