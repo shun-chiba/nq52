@@ -1,8 +1,17 @@
 import pandas
 import psycopg2
 
+# 指定した期間、銘柄の株価をyahoo financeから取得する
+# param
+# 	銘柄、開始日、終了日、term
+# return
+#	取得したデータ
+
 def scraping_yahoo(code, start, end, term):
 	base = "http://info.finance.yahoo.co.jp/history/?code={0}.T&{1}&{2}&tm={3}&p={4}"
+
+	print(start)
+	print(end)
 
 	start = str(start)
 	start = start.split("-")

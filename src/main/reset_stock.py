@@ -14,6 +14,8 @@ def insert_stock(company, host, port, dbname, schema, user, password, data):
 	
 	cur = connection.cursor()
 
+	cur.execute("delete from "+ schema +".dev_stock where campany_cd = "+str(company))
+
 	data_array = data.values
 
 	for row in data_array:

@@ -1,7 +1,7 @@
 # coding:utf-8
 import datetime
 import scraping_yahoo
-import insert_stock
+import reset_stock
 
 #銘柄番号
 company = 7261
@@ -12,6 +12,7 @@ days = 30
 host = "172.17.0.2"
 port = 5432
 dbname = "postgres"
+schema = "nq52"
 user = "postgres"
 password = "postgres"
 
@@ -26,8 +27,10 @@ if __name__ == "__main__":
 	print("test")
 	EndDate = datetime.date.today()
 	StartDate = EndDate - datetime.timedelta(days)
+	print(EndDate)
+	print(StartDate)
 
 	data = scraping_yahoo.scraping_yahoo(company, StartDate, EndDate, "d")
 	print(data)
 
-	insert_stock.insert_stock(company, host, port, dbname, user, password, data)
+	reset_stock.insert_stock(company, host, port, dbname, schema, user, password, data)
