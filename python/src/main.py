@@ -1,7 +1,7 @@
 # coding:utf-8
 
-from src.web import get_stock_prices
-from src.file import write_csv
+from python.src.web import get_stock_prices
+from python.src.file import write_csv
 
 # 銘柄番号
 company = 7201
